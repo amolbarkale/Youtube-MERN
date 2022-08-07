@@ -6,6 +6,7 @@ import { darkTheme, lightTheme } from './Utils/theme';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import VideoPage from './Pages/VideoPage';
+import Signin from './Pages/Signin';
 const Container = styled.div`
 display: flex;
 `
@@ -29,6 +30,9 @@ const App = () => {
               <Switch>
               <Route exact path="/">
              <HomePage/>
+              </Route>
+              <Route exact path="/signin">
+             <Signin/>
               </Route>
               <Route path="/video">
              <VideoPage/>

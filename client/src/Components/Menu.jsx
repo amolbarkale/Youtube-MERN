@@ -22,9 +22,9 @@ import { Link } from 'react-router-dom';
 const Container = styled.div`
 flex: 1;
 font-size: 14px;
-background-color: ${({theme})=>theme.bgLighter};
+background-color: ${({ theme }) => theme.bgLighter};
 height: 100vh;
-color: ${({theme})=>theme.text};
+color: ${({ theme }) => theme.text};
 position: sticky;
 top: 0;
 `
@@ -47,10 +47,13 @@ align-items: center;
 gap: 20px;
 cursor: pointer;
 padding: 7.5px 0;
+&:hover{
+  background: ${({ theme }) => theme.soft};
+}
 `
 const Hr = styled.hr`
 margin: 15px 0px;
-border: 1.5px solid ${({theme})=>theme.soft};
+border: 1.5px solid ${({ theme }) => theme.soft};
 `
 const Login = styled.div`
 
@@ -74,17 +77,17 @@ font-weight: 500;
 color: #aaaaaa;
 margin-bottom: 20px;
 `
-const Menu = ({darkMode, setDarkMode}) => {
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-      <Link to="/" style={{textDecoration: "none", color: "inherit"}}>
-        <Logo>
-          <Img src={Youtube} />
-          Youtube-clone
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={Youtube} />
+            Youtube-clone
+          </Logo>
         </Link>
-        <Item><HomeIcon/>Home</Item>
+        <Item><HomeIcon />Home</Item>
         <Item>
           <ExploreOutlinedIcon />
           Explore
@@ -105,7 +108,8 @@ const Menu = ({darkMode, setDarkMode}) => {
         <Hr />
         <Login>
           Sign in to like videos, comment, and subscribe.
-        <Button><AccountCircleOutlinedIcon/>SIGN IN</Button></Login>
+          <Link to="/signin" style={{textDecoration: "none"}}>
+            <Button><AccountCircleOutlinedIcon />SIGN IN</Button></Link></Login>
         <Hr />
         <Title>BEST OF YOUTUBE</Title>
         <Item>
@@ -145,9 +149,9 @@ const Menu = ({darkMode, setDarkMode}) => {
           <HelpOutlineOutlinedIcon />
           Help
         </Item>
-        <Item onClick={()=>setDarkMode(!darkMode)}>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
-          {darkMode? "Light": "Dark"} Mode
+          {darkMode ? "Light" : "Dark"} Mode
         </Item>
       </Wrapper>
     </Container>

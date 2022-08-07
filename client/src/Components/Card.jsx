@@ -51,14 +51,14 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = () => {
+const Card = ({type}) => {
 
     return (
       <Link to="/video/test" style={{textDecoration: "none"}}>
-          <Container>
-            <Image src="" />
-            <Details>
-                <ChannelImage />
+          <Container type={type}>
+            <Image src="" type={type}/>
+            <Details type={type}>
+                <ChannelImage type={type}/>
                 <Texts>
                     <Title>Web dev. in 2022</Title> 
                     <ChannelName>AmolS B</ChannelName>
